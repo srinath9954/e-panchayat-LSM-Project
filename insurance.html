@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Health Insurance Application</title>
+    <link rel="stylesheet" href="insurance.css">
+</head>
+<body>
+    <header>
+        <h1>Free Health Insurance Application</h1>
+    </header>
+    
+    <main>
+        <section class="application-form">
+            <h2>Application Form</h2>
+            <form id="insurance-application-form" enctype="multipart/form-data">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <!-- Add this code within the <form> element -->
+<label for="aadhaar-card">Aadhaar Card Number:</label>
+<input type="text" id="aadhaar-card" name="aadhaar-card" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="annual-income">Annual Income:</label>
+                <input type="number" id="annual-income" name="annual-income" required>
+
+                <label for="income-certificate">Upload Income Certificate (PDF):</label>
+                <input type="file" id="income-certificate" name="income-certificate" accept=".pdf" required>
+<div id="eligibility-message"></div>
+                <button type="submit">Submit Application</button>
+            </form>
+            <!-- Add this code after the form -->
+
+            <div class="success-message" id="successMessage">Submitted successfully!</div>
+        </section>
+    </main>
+
+    <script src="insurance.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Government Healthcare Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #cb0d0d;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #cb0d0d;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #cb0d0d;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #cb0d0d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ca2522;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Government Healthcare Portal</h1>
+    </header>
+
+    <nav>
+        <a href="insurance.html">Apply for Health Insurance</a>
+        <a href="#vaccine.html">Vaccine Details</a>
+        <a href="hospital.html">Raise Queries About Hospitals</a>
+    </nav>
+
+    <div class="container">
+        <section id="apply-for-health-insurance">
+            <h2>Apply for Health Insurance</h2>
+            <p>Secure your health with government-backed insurance. Click below to start your application:</p>
+            <button class="button" onclick="redirectToInsuranceApplication()"><a href="insurance.html">Apply for Health Insurance</a></button>
+        </section>
+
+        <section id="vaccine-details">
+            <h2>Vaccine Details</h2>
+            <p>Stay up-to-date on the latest vaccine information and availability. Click below for details:</p>
+            <button class="button" onclick="redirectToVaccineDetails()"><a href="vaccine.html">Vaccine Details</a></button>
+        </section>
+
+        <section id="raise-queries-about-hospitals">
+            <h2>Raise Queries About Hospitals</h2>
+            <p>Have questions about hospitals? Need assistance? Click below to raise your queries:</p>
+            <button class="button" onclick="redirectToHospitalQueries()"><a href="hospital.html">Raise Hospital Queries</a></button>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Government Education Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #0074b0;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #0074b0;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #005987;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0074b0;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #005987;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Government Education Portal</h1>
+    </header>
+
+    <nav>
+        <a href="scholarship.html" target="_blank">Apply for Scholarship</a>
+        <a href="school.html" target="_blank">School</a>
+        <a href="college.html" target="_blank">College</a>
+        <a href="higher_education.html" target="_blank">Higher Education</a>
+    </nav>
+
+    <div class="container">
+        <section id="apply-for-scholarship">
+            <h2>Apply for Scholarship</h2>
+            <p>Explore and apply for government scholarships to support your education. Click below to get started:</p>
+            <button class="button" onclick="redirectToScholarshipApplication()"><a href="https://scholarships.gov.in/" target="_blank">Apply for Scholarship</a></button>
+        </section>
+
+        <section id="school-section">
+            <h2>School Section</h2>
+            <p>Find information about schools and educational resources. Click below for more details:</p>
+            <button class="button" onclick="redirectToSchoolSection()"><a href="https://www.tn.gov.in/department/28" target="_blank">School Section</a></button>
+        </section>
+
+        <section id="college-and-higher-education">
+            <h2>College and Higher Education</h2>
+            <p>Discover opportunities for higher studies and career advancement. Click below for information:</p>
+            <button class="button" onclick="redirectToHigherEducation()"><a href="higher_education.html" target="_blank">Higher Education</a></button>
+        </section>
+    </div>
+
+    <script>
+        function redirectToScholarshipApplication() {
+            // Implement the redirection logic here
+            alert("Redirecting to Scholarship Application.");
+        }
+
+        function redirectToSchoolSection() {
+            // Implement the redirection logic here
+            alert("Redirecting to School Section.");
+        }
+
+        function redirectToHigherEducation() {
+            // Implement the redirection logic here
+            alert("Redirecting to Higher Education Section.");
+        }
+    </script>
+</body>
+</html>

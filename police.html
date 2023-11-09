@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Police Department</title>
+    <link rel="stylesheet" href="police.css">
+    <style>
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .query-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .query-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tamil Nadu Police Department</h1>
+        <nav>
+            <ul>
+                <li><a href="#queries">Submit a Query</a></li>
+                <li><a href="#rules">New Rules</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="queries">
+        <h2>Submit Your Query</h2>
+        <form id="queryForm" onsubmit="handleSubmit(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="query">Query:</label>
+            <textarea id="queryText" name="query" rows="4" required></textarea><br>
+
+            <label for="document">Supporting Document:</label>
+            <input type="file" id="document" name="document"><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <div class="success-message" id="successMessage">Submitted successfully!</div>
+    </section>
+
+    <section id="rules">
+        <h2>New Rules and Regulations</h2>
+        <!-- Rule information goes here -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <!-- Contact information goes here -->
+    </section>
+
+    <section id="submitted-queries">
+        <h2>Submitted Queries</h2>
+        <ul class="query-list" id="queryList">
+            <!-- Submitted queries will be added here using JavaScript -->
+        </ul>
+    </section>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const queryText = document.getElementById("queryText").value;
+            const queryList = document.getElementById("queryList");
+
+            // Create a new list item with the submitted query
+            const listItem = document.createElement("li");
+            listItem.className = "query-item";
+            listItem.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Query:</strong> ${queryText}</p>
+            `;
+
+            // Add the new query to the list
+            queryList.appendChild(listItem);
+
+            // Show the success message
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+
+            // Reset the form
+            document.getElementById("queryForm").reset();
+
+            return false; // Prevent the form from actually submitting
+        }
+    </script>
+</body>
+</html>

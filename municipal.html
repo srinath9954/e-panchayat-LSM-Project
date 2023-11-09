@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipal Corporation Website</title>
+    <link rel="stylesheet" href="municipal.css">
+</head>
+<body>
+    <header>
+        <h1>Municipal Corporation</h1>
+        <nav>
+            <ul>
+                <li><a href="#queries">Queries</a></li>
+                <li><a href="#schemes">New Schemes</a></li>
+                <li><a href="#locality">Locality</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="queries">
+        <h2>Submit Your Query</h2>
+        <form id="queryForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="query">Query:</label>
+            <textarea id="query" name="query" rows="4" required></textarea><br>
+
+            <label for="document">Supporting Document:</label>
+            <input type="file" id="document" name="document"><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <div class="success-message" id="successMessage">Submitted successfully!</div>
+    </section>
+
+    <section id="schemes">
+        <h3></h3>
+    </section>
+
+
+    <section id="submittedQueries">
+        <!-- About Us information goes here -->
+    </section>
+
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const queryForm = document.getElementById("queryForm");
+        const successMessage = document.getElementById("successMessage");
+        const submittedQueries = document.getElementById("submittedQueries");
+
+        queryForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Handle the form submission logic here
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const queryText = document.getElementById("query").value;
+
+            // Create a new query element
+            const queryItem = document.createElement("div");
+            queryItem.className = "query-item";
+            queryItem.innerHTML = `
+                <h3>Name: ${name}</h3>
+                <p>Email: ${email}</p>
+                <p>Query: ${queryText}</p>
+            `;
+
+            // Add the query to the list
+            submittedQueries.appendChild(queryItem);
+
+            // Display the success message
+            successMessage.style.display = "block";
+
+            // Reset the form
+            queryForm.reset();
+        });
+    });
+
+    </script>
+
+</body>
+</html>

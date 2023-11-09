@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Query Portal</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.query-form {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Query Portal</h1>
+    </header>
+    <section class="query-form">
+        <h2>Submit Your Query</h2>
+        <form id="queryForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Hospital name:</label>
+            <input type="text" id="hospname" name="hospitalname" required><br><br>
+            <!-- Inside the form -->
+<label for="hospitalAddress">Hospital Address:</label>
+<input type="text" id="hospitalAddress" name="hospitalAddress" required><br><br>
+
+            <label for="query">Query:</label>
+            <textarea id="query" name="query" rows="4" required></textarea><br><br>
+
+            <label for="document">Upload Supporting Document:</label>
+            <input type="file" id="document" name="document"><br><br>
+            
+            <button type="submit">Submit Query</button>
+        </form>
+    </section>
+
+    <section class="queries">
+        <h2>Recent Queries</h2>
+        <!-- Display recent queries here -->
+    </section>
+    <script>
+        // script.js
+document.getElementById('queryForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    
+    // Process the form data here (e.g., send it to the server using AJAX).
+    
+    const name = document.getElementById('name').value;
+    const hospname = document.getElementById('hospname').value;
+    const query = document.getElementById('query').value;
+
+    const queriesSection = document.querySelector('.queries');
+    const queryItem = document.createElement('div');
+    queryItem.className = 'query-item';
+    queryItem.innerHTML = `
+        <strong>Name:</strong> ${name}<br>
+        <strong>Hospital Name:</strong> ${hospname}<br>
+        <strong>Query:</strong> ${query}<br><br>
+    `;
+
+    queriesSection.appendChild(queryItem);
+});
+
+    </script>
+</body>
+</html>
